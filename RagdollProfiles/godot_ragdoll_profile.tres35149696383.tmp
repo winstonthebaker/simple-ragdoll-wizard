@@ -1,0 +1,155 @@
+[gd_resource type="Resource" script_class="RagdollProfile" format=3 uid="uid://bm3fvce4na7hp"]
+
+[ext_resource type="Script" uid="uid://cyoukwbi3qlqy" path="res://addons/SimpleRagdollWizard/ragdoll_bone_config.gd" id="1_qegm4"]
+[ext_resource type="Script" uid="uid://bsf6daw06fghi" path="res://addons/SimpleRagdollWizard/ragdoll_profile.gd" id="2_j5bg5"]
+
+[sub_resource type="GDScript" id="GDScript_x711q"]
+script/source = "@tool
+class_name RagdollBoneConfigggg
+extends Resource
+
+
+enum ColliderType {BOX, CAPSULE}
+enum JointType {HINGE, CONE_TWIST}
+
+@export var bone_name: String = \"\"
+
+@export var collider_type: ColliderType = ColliderType.CAPSULE
+@export var joint_type: JointType = JointType.CONE_TWIST
+
+@export var box_extents: Vector3 = Vector3(1.0, 1.0, 1.0)
+@export var capsule_shape: Vector2 = Vector2(0.3, 1.0)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j5bg5"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="Resource" id="Resource_u2wc7"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"Chest"
+collision_shape = SubResource("BoxShape3D_j5bg5")
+mass = 0.2
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5aban"]
+size = Vector3(1, 1, 0.7)
+
+[sub_resource type="Resource" id="Resource_jkq38"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"Neck"
+collision_shape = SubResource("BoxShape3D_5aban")
+mass = 0.3
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5bg5"]
+radius = 0.1
+height = 0.26
+
+[sub_resource type="Resource" id="Resource_g85gc"]
+script = ExtResource("1_qegm4")
+collision_shape = SubResource("CapsuleShape3D_j5bg5")
+mass = 0.1
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qegm4"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_j5bg5"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"LeftLowerArm"
+collision_shape = SubResource("CapsuleShape3D_qegm4")
+mass = 0.05
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u2wc7"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_5aban"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"RightLowerArm"
+collision_shape = SubResource("CapsuleShape3D_u2wc7")
+mass = 0.05
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jkq38"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_2ip6g"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"LeftHand"
+collision_shape = SubResource("CapsuleShape3D_jkq38")
+mass = 0.04
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g85gc"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_7tepu"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"RightHand"
+collision_shape = SubResource("CapsuleShape3D_g85gc")
+mass = 0.04
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5aban"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_61x7e"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"LeftLowerLeg"
+collision_shape = SubResource("CapsuleShape3D_5aban")
+mass = 0.1
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n6gjt"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_m7bkc"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"LeftFoot"
+collision_shape = SubResource("CapsuleShape3D_n6gjt")
+mass = 0.05
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3w87"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_u42x8"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"RightFoot"
+collision_shape = SubResource("CapsuleShape3D_r3w87")
+mass = 0.05
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6x8or"]
+
+[sub_resource type="Resource" id="Resource_sbhxa"]
+script = ExtResource("1_qegm4")
+leaf_bone_name = &"RightLowerLeg"
+collision_shape = SubResource("CapsuleShape3D_6x8or")
+mass = 0.1
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[resource]
+script = ExtResource("2_j5bg5")
+ragdoll_bone_configs = Dictionary[StringName, SubResource("GDScript_x711q")]({
+&"Chest": SubResource("Resource_jkq38"),
+&"Head": SubResource("Resource_g85gc"),
+&"Hips": SubResource("Resource_u2wc7"),
+&"LeftLowerArm": SubResource("Resource_2ip6g"),
+&"LeftLowerLeg": SubResource("Resource_m7bkc"),
+&"LeftUpperArm": SubResource("Resource_j5bg5"),
+&"LeftUpperLeg": SubResource("Resource_61x7e"),
+&"RightLowerArm": SubResource("Resource_7tepu"),
+&"RightLowerLeg": SubResource("Resource_u42x8"),
+&"RightUpperArm": SubResource("Resource_5aban"),
+&"RightUpperLeg": SubResource("Resource_sbhxa")
+})
+metadata/_custom_type_script = "uid://bsf6daw06fghi"

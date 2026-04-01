@@ -1,0 +1,236 @@
+[gd_resource type="Resource" script_class="RagdollProfile" format=3 uid="uid://ccqbrk5la7p80"]
+
+[ext_resource type="Script" uid="uid://cyoukwbi3qlqy" path="res://addons/SimpleRagdollWizard/ragdoll_bone_config.gd" id="1_lv0vq"]
+[ext_resource type="Script" uid="uid://bsf6daw06fghi" path="res://addons/SimpleRagdollWizard/ragdoll_profile.gd" id="2_3l8md"]
+[ext_resource type="Script" uid="uid://donk3y8kr7pm5" path="res://addons/SimpleRagdollWizard/JointConfiguration/cone_joint_config.gd" id="2_dhdke"]
+[ext_resource type="Script" uid="uid://cgvle41w1h6iw" path="res://addons/SimpleRagdollWizard/JointConfiguration/sixdof_joint_config.gd" id="3_oh0k7"]
+[ext_resource type="Script" uid="uid://ldgrxy8lctm5" path="res://addons/SimpleRagdollWizard/JointConfiguration/hinge_joint_config.gd" id="4_8t2lr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xw2kl"]
+size = Vector3(1, 1, 0.7)
+
+[sub_resource type="Resource" id="Resource_5vefm"]
+script = ExtResource("2_dhdke")
+metadata/_custom_type_script = "uid://donk3y8kr7pm5"
+
+[sub_resource type="Resource" id="Resource_dhdke"]
+script = ExtResource("1_lv0vq")
+mass = 0.3
+leaf_bone_name = &"Neck"
+collision_shape = SubResource("BoxShape3D_xw2kl")
+joint_config = SubResource("Resource_5vefm")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oh0k7"]
+radius = 0.1
+height = 0.26
+
+[sub_resource type="Resource" id="Resource_g5oim"]
+script = ExtResource("2_dhdke")
+metadata/_custom_type_script = "uid://donk3y8kr7pm5"
+
+[sub_resource type="Resource" id="Resource_8t2lr"]
+script = ExtResource("1_lv0vq")
+mass = 0.1
+collision_shape = SubResource("CapsuleShape3D_oh0k7")
+collider_scalar = 1.0
+joint_config = SubResource("Resource_g5oim")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lv0vq"]
+
+[sub_resource type="Resource" id="Resource_3l8md"]
+script = ExtResource("1_lv0vq")
+mass = 0.2
+leaf_bone_name = &"Chest"
+collision_shape = SubResource("BoxShape3D_lv0vq")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g5oim"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_lxfm5"]
+script = ExtResource("4_8t2lr")
+metadata/_custom_type_script = "uid://ldgrxy8lctm5"
+
+[sub_resource type="Resource" id="Resource_dsphu"]
+script = ExtResource("1_lv0vq")
+mass = 0.04
+leaf_bone_name = &"LeftHand"
+collision_shape = SubResource("CapsuleShape3D_g5oim")
+joint_config = SubResource("Resource_lxfm5")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhdnk"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_qol6v"]
+script = ExtResource("4_8t2lr")
+metadata/_custom_type_script = "uid://ldgrxy8lctm5"
+
+[sub_resource type="Resource" id="Resource_n4m1q"]
+script = ExtResource("1_lv0vq")
+mass = 0.05
+leaf_bone_name = &"LeftFoot"
+collision_shape = SubResource("CapsuleShape3D_qhdnk")
+joint_config = SubResource("Resource_qol6v")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vefm"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_ur32m"]
+script = ExtResource("3_oh0k7")
+x_upper = 135.0
+x_lower = -45.0
+x_stiffness = 8.0
+x_damping = 4.0
+y_upper = 90.0
+y_lower = -90.0
+y_stiffness = 6.0
+y_damping = 3.0
+z_upper = 90.0
+z_lower = -10.0
+metadata/_custom_type_script = "uid://cgvle41w1h6iw"
+
+[sub_resource type="Resource" id="Resource_bh8ae"]
+script = ExtResource("1_lv0vq")
+mass = 0.05
+leaf_bone_name = &"LeftLowerArm"
+collision_shape = SubResource("CapsuleShape3D_5vefm")
+joint_config = SubResource("Resource_ur32m")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j021c"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_fku34"]
+script = ExtResource("3_oh0k7")
+x_upper = 90.0
+x_lower = -10.0
+x_stiffness = 80.0
+x_damping = 8.0
+y_upper = 20.0
+y_lower = -20.0
+y_stiffness = 80.0
+y_damping = 40.0
+z_upper = 45.0
+z_lower = -15.0
+z_stiffness = 80.0
+z_damping = 40.0
+metadata/_custom_type_script = "uid://cgvle41w1h6iw"
+
+[sub_resource type="Resource" id="Resource_glgpn"]
+script = ExtResource("1_lv0vq")
+mass = 0.1
+leaf_bone_name = &"LeftLowerLeg"
+collision_shape = SubResource("CapsuleShape3D_j021c")
+joint_config = SubResource("Resource_fku34")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxfm5"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_tfked"]
+script = ExtResource("4_8t2lr")
+metadata/_custom_type_script = "uid://ldgrxy8lctm5"
+
+[sub_resource type="Resource" id="Resource_0q6rj"]
+script = ExtResource("1_lv0vq")
+mass = 0.04
+leaf_bone_name = &"RightHand"
+collision_shape = SubResource("CapsuleShape3D_lxfm5")
+joint_config = SubResource("Resource_tfked")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tfked"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_qhdnk"]
+script = ExtResource("4_8t2lr")
+metadata/_custom_type_script = "uid://ldgrxy8lctm5"
+
+[sub_resource type="Resource" id="Resource_hmfbk"]
+script = ExtResource("1_lv0vq")
+mass = 0.05
+leaf_bone_name = &"RightFoot"
+collision_shape = SubResource("CapsuleShape3D_tfked")
+joint_config = SubResource("Resource_qhdnk")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ur32m"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_darc5"]
+script = ExtResource("3_oh0k7")
+x_upper = 135.0
+x_lower = -45.0
+x_stiffness = 8.0
+x_damping = 4.0
+y_upper = 90.0
+y_lower = -90.0
+y_stiffness = 6.0
+y_damping = 3.0
+z_upper = 90.0
+z_lower = -10.0
+metadata/_custom_type_script = "uid://cgvle41w1h6iw"
+
+[sub_resource type="Resource" id="Resource_t72g5"]
+script = ExtResource("1_lv0vq")
+mass = 0.05
+leaf_bone_name = &"RightLowerArm"
+collision_shape = SubResource("CapsuleShape3D_ur32m")
+joint_config = SubResource("Resource_darc5")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_darc5"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="Resource" id="Resource_j021c"]
+script = ExtResource("3_oh0k7")
+x_upper = 90.0
+x_lower = -10.0
+x_stiffness = 50.0
+x_damping = 8.0
+y_upper = 20.0
+y_lower = -20.0
+y_stiffness = 80.0
+y_damping = 40.0
+z_upper = -45.0
+z_lower = 15.0
+z_stiffness = 80.0
+z_damping = 40.0
+metadata/_custom_type_script = "uid://cgvle41w1h6iw"
+
+[sub_resource type="Resource" id="Resource_tc246"]
+script = ExtResource("1_lv0vq")
+mass = 0.1
+leaf_bone_name = &"RightLowerLeg"
+collision_shape = SubResource("CapsuleShape3D_darc5")
+joint_config = SubResource("Resource_j021c")
+metadata/_custom_type_script = "uid://cyoukwbi3qlqy"
+
+[resource]
+script = ExtResource("2_3l8md")
+ragdoll_bone_configs = Dictionary[StringName, ExtResource("1_lv0vq")]({
+&"Chest": SubResource("Resource_dhdke"),
+&"Head": SubResource("Resource_8t2lr"),
+&"Hips": SubResource("Resource_3l8md"),
+&"LeftLowerArm": SubResource("Resource_dsphu"),
+&"LeftLowerLeg": SubResource("Resource_n4m1q"),
+&"LeftUpperArm": SubResource("Resource_bh8ae"),
+&"LeftUpperLeg": SubResource("Resource_glgpn"),
+&"RightLowerArm": SubResource("Resource_0q6rj"),
+&"RightLowerLeg": SubResource("Resource_hmfbk"),
+&"RightUpperArm": SubResource("Resource_t72g5"),
+&"RightUpperLeg": SubResource("Resource_tc246")
+})
+metadata/_custom_type_script = "uid://bsf6daw06fghi"
