@@ -1,4 +1,31 @@
+# Godot import data (rebuildable)
 .import/
+*.import
+
+# Godot cache files
 .export/
+.export_presets.cfg
+
+# Mono / C# (if using .NET)
+.mono/
+data_*/
+*.csproj
+*.sln
+*.user
+*.dotnet/
+
+# Build output
+bin/
+obj/
+
+# Editor settings (local, not shared)
+.godot/
+.editor/
 *.tmp
+
+# OS / misc
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log

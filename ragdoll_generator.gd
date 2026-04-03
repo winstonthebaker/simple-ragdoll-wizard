@@ -6,6 +6,9 @@ extends Node
 ##The mass that every bone in the ragdoll is multiplied by. Be warned: this value may not actually be the total mass of all bones combined. 
 @export var total_mass: float = 80.0
 
+##The friction for every physical bone.
+@export var friction : float = 0.6
+
 ##The profile to use.
 @export var ragdoll_profile: RagdollProfile = load("res://addons/SimpleRagdollWizard/RagdollProfiles/humanoid_ragdoll_profile.tres")
 
@@ -285,7 +288,7 @@ func generate_bone(skeleton: Skeleton3D, simulator: PhysicalBoneSimulator3D, bon
 	var ragdoll_bone_config: RagdollBoneConfig = ragdoll_profile.ragdoll_bone_configs[bone_name]
 	var physical_bone := _create_physical_bone(simulator, bone_name, skeleton_bone_name)
 	physical_bone.mass = ragdoll_bone_config.mass * total_mass
-
+	physical_bone.friction = friction
 	var new_shape := _build_scaled_shape(skeleton, bone_id, physical_bone, ragdoll_bone_config)
 	_attach_collision(physical_bone, new_shape)
 
