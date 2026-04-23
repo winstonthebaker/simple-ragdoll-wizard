@@ -110,8 +110,8 @@ height = 1.0
 
 [sub_resource type="Resource" id="Resource_fku34"]
 script = ExtResource("4_y45hu")
-x_upper = 90.0
-x_lower = -10.0
+x_upper = 10.0
+x_lower = -100.0
 x_stiffness = 80.0
 x_damping = 8.0
 y_upper = 20.0
@@ -196,8 +196,8 @@ height = 1.0
 
 [sub_resource type="Resource" id="Resource_j021c"]
 script = ExtResource("4_y45hu")
-x_upper = 90.0
-x_lower = -10.0
+x_upper = 10.0
+x_lower = -100.0
 x_stiffness = 50.0
 x_damping = 8.0
 y_upper = 20.0
